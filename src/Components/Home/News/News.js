@@ -5,57 +5,40 @@ import NewsData from '../../News.json';
 const News = () => {
 
     const [data, setData] = useState([]);
-
+    const [categories, setCategories] = useState([
+        "Movie",
+        "COVID",
+        "International",
+        "Local",
+        "Entertainment",
+        "Style",
+        "Health",
+        "Travel",
+        "Business",
+        "Food"
+    ])
     useEffect(() => {
         setData(NewsData);
     }, [])
 
-    const Movie = () => {
-        setData(NewsData.slice(0,2))
+    const NewData = (e) => {
+        const Text = document.getElementById("text").innerHTML;
+        setData(NewsData.filter(news => news.category === Text))
     }
-    const COVID = () => {
-        setData(NewsData.slice(2,4))
-    }
-    const International = () => {
-        setData(NewsData.slice(4,6))
-    }
-    const Local = () => {
-        setData(NewsData.slice(6,8))
-    }
-    const Entertainment = () => {
-        setData(NewsData.slice(8,10))
-    }
-    const Style = () => {
-        setData(NewsData.slice(10,12))
-    }
-    const Health = () => {
-        setData(NewsData.slice(12,14))
-    }
-    const Travel = () => {
-        setData(NewsData.slice(14,16))
-    }
-    const Business = () => {
-        setData(NewsData.slice(16,18))
-    }
-    const Food = () => {
-        setData(NewsData.slice(18,20))
-    }
+
     return (
         <section className="px-5 py-10 bg-blue-50">
             {/* Heading */}
             <p className="font-bold text-3xl py-3">News</p>
             {/* Categories Start */}
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 Categories md:mx-16 flex font-bold">
-                <p onClick={Movie}>Movie</p>
-                <p onClick={COVID}>COVID</p>
-                <p onClick={International}>International</p>
-                <p onClick={Local}>Local</p>
-                <p onClick={Entertainment}>Entertainment</p>
-                <p onClick={Style}>Style</p>
-                <p onClick={Health}>Health</p>
-                <p onClick={Travel}>Travel</p>
-                <p onClick={Business}>Business</p>
-                <p onClick={Food}>Food</p>
+                {
+                    categories.map(category => {
+                        return (
+                            <p id="text" onClick={NewData}>{category}</p>
+                        )
+                    })
+                }
             </div>
             {/* Categories End */}
 
@@ -79,6 +62,7 @@ const News = () => {
                     })
                 }
             </section>
+            {/* News end */}
         </section>
     );
 };
