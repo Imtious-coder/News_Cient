@@ -12,7 +12,7 @@ const Navbar = () => {
                 <p>Local</p>
                 <p>Entertainment</p>
                 <p>Style</p>
-                <p>Healh</p>
+                <p>Health</p>
                 <p>Business</p>
                 <p>Food</p>
             </div>
