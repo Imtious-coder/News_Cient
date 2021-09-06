@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
     return (
-        <nav className="px-5">
+        <nav className="px-5 mb-5">
             <p id="Logo" className="md:px-5">News Moon</p>
             <div id="Navigations">
                 <p>Home</p>

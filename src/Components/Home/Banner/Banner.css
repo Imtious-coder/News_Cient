@@ -1,0 +1,45 @@
+#Banner {
+    width: 100%;
+    display: flex;
+}
+
+/* Slider.. */
+
+.Slider {
+    width: 60%;
+}
+
+.Slide {
+    width: 100%;
+    background-color: red;
+}
+
+.Slide img {
+    width: 100%;
+    height: 350px;
+    background-image: cover;
+}
+
+
+/* Top News... */
+
+.TopNews {
+    width: 35%;
+    margin-left: 3%;
+}
+
+.BannerTopNews {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    column-gap: 20px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 23px;
+}
+
+.BannerTopNews img {
+    width: 30%;
+    height: 100%;
+    margin-left: 5%;
+}
