@@ -1,0 +1,49 @@
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+    background: rgb(255, 2, 2);
+}
+
+#Logo{
+    margin: 0px 5px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: rgb(199, 0, 0);
+    text-transform: uppercase;
+    border: 2px solid white;
+}
+
+#Navigations{
+    margin-left: auto;
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 5px;
+}
+#Navigations::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+#Navigations::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+#Navigations::-webkit-scrollbar-thumb {
+    background: rgb(157, 255, 0);
+    border-radius: 10px;
+  }
+
+#Navigations p {
+    margin: 0px 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: 3px solid red;
+}
+
+#Navigations p:hover{
+    border-bottom: 3px solid white;
+}
