@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './News.css';
 import NewsData from '../../News.json';
+import { Link } from 'react-router-dom';
 
 const News = () => {
 
@@ -50,7 +51,9 @@ const News = () => {
                             <div className="flex shadow p-2 News">
                                 <div className="MainNewsImages">
                                     <img className="MainNewsImage" src={e.image} alt="" />
-                                    <button className="ReadMoreButton">Read more</button>
+                                    <Link to={"/news/" + e.id}>
+                                        <button className="ReadMoreButton">Read more</button>
+                                    </Link>
                                 </div>
                                 <div className="ml-2">
                                     <p className="NewsTitle">{e.title}</p>
