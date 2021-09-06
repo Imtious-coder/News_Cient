@@ -1,0 +1,65 @@
+.Login{
+    display: flex;
+    justify-content: center;
+}
+
+
+.LoginForm{
+    padding: 20px 50px 30px 50px;
+    background-color: rgb(255, 187, 187);
+}
+
+
+.InputsTitle{
+    font-weight: bold;
+    color: black;
+    margin-bottom: 2px;
+    margin-top: 15px;
+}
+
+.Inputs {
+    width: 300px;
+    border: none;
+    outline: none;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.LoginFormButton {
+    width: 300px;
+    margin-top: 20px;
+    color: white;
+    padding: 5px 0px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: red;
+    transition: all .2s ease-in-out;
+}
+
+.LoginFormButton:hover {
+    color: rgb(0, 0, 0);
+    background-color: greenyellow;
+}
+
+.GoogleLogin{
+    background-color: rgb(231, 255, 196);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.GoogleLoginButton {
+    padding: 5px 60px;
+    border: 2px solid rgb(255, 70, 70);
+    color: rgb(87, 87, 87);
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.GoogleLoginButton:hover {
+    color: white;
+    background-color: rgb(255, 70, 70);
+}
