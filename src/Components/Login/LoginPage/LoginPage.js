@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -8,16 +9,23 @@ const LoginPage = () => {
                 <form className="LoginForm" action="/" method="POST">
                     <p className="font-bold text-2xl">Login</p>
                     <p className="InputsTitle">Email: </p>
-                    <input className="Inputs" type="text" placeholder="Email" required />
+                    <input className="Inputs" type="email" placeholder="Email" required />
                     <p className="InputsTitle">Password: </p>
                     <input className="Inputs" type="password" placeholder="Password" required />
                     <br />
                     <button className="LoginFormButton" type="submit">Login</button>
                 </form>
                 <section className="GoogleLogin">
-                    <div>
-                        <p className="font-bold text-lg text-center">or</p>
-                        <button className="GoogleLoginButton">Login with GOOGLE</button>
+                    <div className="py-5">
+                        <div>
+                            <button className="GoogleLoginButton">Login with GOOGLE</button>
+                        </div>
+                        <div>
+                            <p className="font-bold text-md text-center m-0 mt-5 mb-5">Don't have an account?</p>
+                            <Link to="/CreateAccount">
+                                <button className="CreateAccountButton">Create account</button>
+                            </Link>
+                        </div>
                     </div>
                 </section>
             </div>

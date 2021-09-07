@@ -8,6 +8,7 @@ import Home from './Components/Home/Home/Home';
 import Navbar from './Components/Home/Navbar/Navbar';
 import NewsDetails from './Components/NewsDetails/NewsDetails';
 import LoginPage from './Components/Login/LoginPage/LoginPage';
+import CreateAccount from './Components/Login/CreateAccount/CreateAccount';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route path="/LoginPage">
           <LoginPage />
+        </Route>
+        <Route path="/CreateAccount">
+          <CreateAccount />
         </Route>
         <Route path="/">
           <Home />

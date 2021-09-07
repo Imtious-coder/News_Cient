@@ -63,3 +63,17 @@
     color: white;
     background-color: rgb(255, 70, 70);
 }
+
+.CreateAccountButton{
+    padding: 5px 80px;
+    border: 2px solid rgb(42, 179, 0);
+    color: rgb(87, 87, 87);
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.CreateAccountButton:hover {
+    color: white;
+    background-color: rgb(42, 179, 0);
+}

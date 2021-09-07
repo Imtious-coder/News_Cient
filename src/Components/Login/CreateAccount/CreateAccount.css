@@ -1,0 +1,39 @@
+.CreateAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Form{
+    padding: 20px 40px;
+    background-color: rgb(192, 255, 155);
+}
+
+.Input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+.Input-Titles {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0px 5px 0px ;
+}
+
+.Create-AccountButton {
+    width: 100%;
+    padding: 5px 0px;
+    margin-top: 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid green;
+    background-color: transparent;
+}
+
+.Create-AccountButton:hover {
+    background-color: green;
+    color: white;
+}
