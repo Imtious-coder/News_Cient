@@ -1,5 +1,10 @@
 import React from 'react';
 import './CreateAccount.css';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import firebaseConfig from '../../../firebase.config';
+
+const app = initializeApp(firebaseConfig);
 
 const CreateAccount = () => {
     return (
