@@ -9,6 +9,7 @@ import Navbar from './Components/Home/Navbar/Navbar';
 import NewsDetails from './Components/NewsDetails/NewsDetails';
 import LoginPage from './Components/Login/LoginPage/LoginPage';
 import CreateAccount from './Components/Login/CreateAccount/CreateAccount';
+import Admin from './Components/Admin/Admin';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/CreateAccount">
           <CreateAccount />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
         <Route path="/">
           <Home />
