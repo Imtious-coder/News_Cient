@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import firebaseConfig from '../../../firebase.config';
 import './LoginPage.css';
@@ -14,18 +14,34 @@ const app = initializeApp(firebaseConfig);
 
 const LoginPage = () => {
 
+    const [user, setUser] = useState({
+        isloggedin: false,
+        name: "",
+        photo: "",
+        email: "",
+        type: "visitor"
+    })
+
     const handleSignin = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
             .then((result) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const { displayName, photoURL, email } = result.user;
+                setUser({
+                    isloggedin: true,
+                    name: displayName,
+                    photo: photoURL,
+                    email: email,
+                    type: "visitor"
+                })
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const email = error.email;
                 const credential = GoogleAuthProvider.credentialFromError(error);
             });
+        console.log(user)
     }
 
     const provider = new GoogleAuthProvider();
@@ -46,7 +62,9 @@ const LoginPage = () => {
                 <section className="GoogleLogin">
                     <div className="py-5">
                         <div>
-                            <button onClick={handleSignin} className="GoogleLoginButton">Login with GOOGLE</button>
+                            <Link to="/admin">
+                                <button onMouseOver={handleSignin} onClick={handleSignin} className="GoogleLoginButton">Login with GOOGLE</button>
+                            </Link>
                         </div>
                         <div>
                             <p className="font-bold text-md text-center m-0 mt-5 mb-5">Don't have an account?</p>

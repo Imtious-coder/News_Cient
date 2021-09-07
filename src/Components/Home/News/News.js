@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const News = () => {
 
-    const [data, setData] = useState([]);
+    const [datas, setData] = useState([]);
     const [categories, setCategories] = useState([
         "Movie",
         "COVID",
@@ -19,7 +19,9 @@ const News = () => {
         "Food"
     ])
     useEffect(() => {
-        setData(NewsData);
+        fetch('http://localhost:5000/news')
+            .then(res => res.json())
+            .then(data => setData(data))
     }, [])
 
     const NewData = (e) => {
@@ -46,7 +48,7 @@ const News = () => {
             {/* News Start */}
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
                 {
-                    data.map((e) => {
+                    datas.map((e) => {
                         return (
                             <div className="flex shadow p-2 News">
                                 <div className="MainNewsImages">
