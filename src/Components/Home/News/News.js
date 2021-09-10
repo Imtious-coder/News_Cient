@@ -19,7 +19,7 @@ const News = () => {
         "Food"
     ])
     useEffect(() => {
-        fetch('http://localhost:5000/news')
+        fetch('https://young-reaches-38800.herokuapp.com/news')
             .then(res => res.json())
             .then(data => setData(data))
     }, [])

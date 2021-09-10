@@ -29,7 +29,7 @@ const CreateAccount = () => {
         setNewUser(NewUserData);
         console.log(newUser);
 
-        fetch('http://localhost:5000/newUser', {
+        fetch('https://young-reaches-38800.herokuapp.com/newUser', {
             method: 'POST',
             body: JSON.stringify(newUser),
             headers: {

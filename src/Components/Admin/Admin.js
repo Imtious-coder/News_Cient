@@ -30,7 +30,7 @@ const Admin = () => {
 
         console.log(newdata)
 
-        fetch('http://localhost:5000/addNews', {
+        fetch('https://young-reaches-38800.herokuapp.com/addNews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
