@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './CreateAccount.css';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import firebaseConfig from '../../../firebase.config';
 import Footer from '../../Home/Footer/Footer';
 
