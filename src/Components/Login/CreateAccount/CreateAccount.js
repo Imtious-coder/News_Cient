@@ -1,24 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CreateAccount.css';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import firebaseConfig from '../../../firebase.config';
+import Footer from '../../Home/Footer/Footer';
 
 const app = initializeApp(firebaseConfig);
 
 const CreateAccount = () => {
+
+    const [newUser, setNewUser] = useState({
+        name: "",
+        email: "",
+        password: ""
+    })
+
+    const handleNewUser = () => {
+        const name = document.getElementById("name").value
+        const email = document.getElementById("email").value
+        const password = document.getElementById("password").value
+
+        const NewUserData = {
+            name: name,
+            email: email,
+            password: password
+        }
+
+        setNewUser(NewUserData);
+        console.log(newUser);
+
+        fetch('http://localhost:5000/newUser', {
+            method: 'POST',
+            body: JSON.stringify(newUser),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(res => res.json())
+            .then(data => console.log(data));
+    }
+
     return (
-        <section className="CreateAccount">
-            <form action="/" method="POST" className="Form">
+        <section>
+            <section className="CreateAccount mb-5">
+            <form onSubmit={handleNewUser} action="/newUser" className="Form">
                 <p className="text-3xl font-bold text-center">Create your account</p>
                 <p className="Input-Titles">Name:</p>
-                <input className="Input" type="text" placeholder="Your Full Name" required />
+                <input id="name" className="Input" type="text" placeholder="Your Full Name" required />
                 <p className="Input-Titles">Email:</p>
-                <input className="Input" type="email" placeholder="Email" required />
+                <input id="email" className="Input" type="email" placeholder="Email" required />
                 <p className="Input-Titles">Password:</p>
-                <input className="Input" type="password" placeholder="Password" required />
+                <input id="password" className="Input" type="password" placeholder="Password" required />
                 <button type="submit" className="Create-AccountButton">Create Account</button>
             </form>
+        </section>
+        <Footer />
         </section>
     );
 };

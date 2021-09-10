@@ -5,6 +5,7 @@ import './LoginPage.css';
 import { initializeApp } from 'firebase/app';
 import { GoogleAuthProvider } from "firebase/auth";
 import { getAuth, signInWithPopup } from "firebase/auth";
+import Footer from '../../Home/Footer/Footer'
 
 
 
@@ -22,19 +23,23 @@ const LoginPage = () => {
         type: "visitor"
     })
 
+
+    const provider = new GoogleAuthProvider();
+
     const handleSignin = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
             .then((result) => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const { displayName, photoURL, email } = result.user;
-                setUser({
+                const signedInUser = {
                     isloggedin: true,
                     name: displayName,
                     photo: photoURL,
                     email: email,
                     type: "visitor"
-                })
+                }
+                setUser(signedInUser)
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -44,10 +49,10 @@ const LoginPage = () => {
         console.log(user)
     }
 
-    const provider = new GoogleAuthProvider();
 
     return (
-        <section className="Login mt-20">
+        <section>
+            <section className="Login mt-20 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2">
                 <form className="LoginForm" action="/" method="POST">
                     <p className="font-bold text-2xl">Login</p>
@@ -75,6 +80,8 @@ const LoginPage = () => {
                     </div>
                 </section>
             </div>
+        </section>
+        <Footer />
         </section>
     );
 };
