@@ -9,8 +9,13 @@ const LoginButton = () => {
                 <marquee className="Marquee" behavior="scroll" direction="" scrollamount="5">Programming Hero Assignment. END Game task.</marquee>
             </div>
             <div className="flex-1 m-auto">
+                {/* Login Button */}
                 <Link to="/LoginPage">
                     <button className="LoginButton">Login</button>
+                </Link>
+                {/* Admin Button */}
+                <Link to="/admin">
+                    <button className="LoginButton mr-5">Admin</button>
                 </Link>
             </div>
         </section>
